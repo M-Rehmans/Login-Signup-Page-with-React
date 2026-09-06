@@ -1,0 +1,64 @@
+/* =========================================
+   SIGNUP ONLY STYLES
+   ========================================= */
+
+.signup-card {
+  max-width: 460px;
+  padding: 36px 38px;
+}
+
+.signup-card .auth-header {
+  margin-bottom: 25px;
+}
+
+.signup-card .form-group {
+  margin-bottom: 13px;
+}
+
+.password-hint {
+  display: block;
+
+  margin-top: 5px;
+
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.terms {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  margin-top: 2px;
+
+  color: #4b5563;
+  font-size: 12px;
+  line-height: 18px;
+
+  cursor: pointer;
+}
+
+.terms input {
+  width: 15px;
+  height: 15px;
+
+  margin-top: 1px;
+
+  flex-shrink: 0;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+
+.signup-card .terms + .error-message {
+  margin-top: 3px;
+}
+
+.signup-card .auth-btn {
+  margin-top: 7px;
+}
+
+@media (max-width: 480px) {
+  .signup-card {
+    padding: 30px 22px;
+  }
+}
