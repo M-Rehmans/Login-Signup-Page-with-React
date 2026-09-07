@@ -208,6 +208,12 @@ a {
   text-decoration: underline;
 }
 
+.form-toggle {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .auth-container {
     padding: 20px 14px;
