@@ -117,9 +117,9 @@ function Form(props) {
         {props.formType ? "Create Account" : "Login"}
       </button>
       <p className="switch-text">
-        {props.formType ? `Already have an account?` : `Don't have an account?`}
+        {props.formType ? `Already have an account? ` : `Don't have an account? `}
         {/* <a href="login.html">{props.formType ? "Login" : "Create Account"}</a> */}
-        <span className=""></span>
+        <span className="form-toggle" >{props.formType ? "Login" : "Create Account"}</span>
       </p>
     </form>
   );
