@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import Form from "./Form";
-var isSignup = false;
+
+// var isSignup = false;
+var [isSignup, changeForm] = useState(false);
 
 function App() {
   return (

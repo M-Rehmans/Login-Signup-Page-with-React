@@ -3,11 +3,11 @@ import React from "react";
 // import Input from "./Input";
 // import Label from "./Label";
 
-function Form({ isSignup }) {
+function Form(props) {
   return (
-    <form id={isSignup ? "signupForm" : "loginForm"} noValidate>
+    <form id={props.formType ? "signupForm" : "loginForm"} noValidate>
       {/* Changed novalidate to camelCase noValidate */}
-      {isSignup && (
+      {props.formType && (
         <div className="form-group">
           <label htmlFor="signupName">Full Name</label>
           <input
@@ -20,54 +20,54 @@ function Form({ isSignup }) {
         </div>
       )}
       <div className="form-group">
-        <label htmlFor={isSignup ? "signupEmail" : "loginEmail"}>
+        <label htmlFor={props.formType ? "signupEmail" : "loginEmail"}>
           Email Address
         </label>
         {/* Changed for to htmlFor */}
         <input
           type="email"
-          id={isSignup ? "signupEmail" : "loginEmail"}
+          id={props.formType ? "signupEmail" : "loginEmail"}
           placeholder="Enter your email"
           autoComplete="email"
         />
         {/* Added self-closing slash */}
         <small
           className="error-message"
-          id={isSignup ? "signupEmailError" : "loginEmailError"}
+          id={props.formType ? "signupEmailError" : "loginEmailError"}
         ></small>
       </div>
       <div className="form-group">
-        <label htmlFor={isSignup ? "signupPassword" : "loginPassword"}>
+        <label htmlFor={props.formType ? "signupPassword" : "loginPassword"}>
           Password
         </label>
         {/* Changed for to htmlFor */}
         <div className="password-box">
           <input
             type="password"
-            id={isSignup ? "signupPassword" : "loginPassword"}
-            placeholder={isSignup ? "Create a password" : "Enter your password"}
-            autoComplete={isSignup ? "new-password" : "current-password"}
+            id={props.formType ? "signupPassword" : "loginPassword"}
+            placeholder={props.formType ? "Create a password" : "Enter your password"}
+            autoComplete={props.formType ? "new-password" : "current-password"}
           />
           {/* Added self-closing slash */}
           <button
             type="button"
             className="password-toggle"
-            id={isSignup ? "signupPasswordToggle" : "loginPasswordToggle"}
+            id={props.formType ? "signupPasswordToggle" : "loginPasswordToggle"}
           >
             Show
           </button>
         </div>
-        {isSignup && (
+        {props.formType && (
           <small className="password-hint">
             Minimum 8 characters, including a number.
           </small>
         )}
         <small
           className="error-message"
-          id={isSignup ? "signupPasswordError" : "loginPasswordError"}
+          id={props.formType ? "signupPasswordError" : "loginPasswordError"}
         ></small>
       </div>
-      {isSignup && (
+      {props.formType && (
         <div>
           <div className="form-group">
             <label htmlFor="confirmPassword">Confirm Password</label>
@@ -100,7 +100,7 @@ function Form({ isSignup }) {
         </div>
       )}
 
-      {!isSignup && (
+      {!props.formType && (
         <div className="form-options">
           <label className="remember-me">
             <input type="checkbox" id="rememberMe" />
@@ -114,11 +114,12 @@ function Form({ isSignup }) {
       )}
 
       <button type="submit" className="auth-btn">
-        {isSignup ? "Create Account" : "Login"}
+        {props.formType ? "Create Account" : "Login"}
       </button>
       <p className="switch-text">
-        {isSignup ? `Already have an account?` : `Don't have an account?`}
-        <a href="login.html">{isSignup ? "Login" : "Create Account"}</a>
+        {props.formType ? `Already have an account?` : `Don't have an account?`}
+        {/* <a href="login.html">{props.formType ? "Login" : "Create Account"}</a> */}
+        <span className=""></span>
       </p>
     </form>
   );
