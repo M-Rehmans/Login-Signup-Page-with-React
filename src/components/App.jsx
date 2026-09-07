@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Form from "./Form";
 
 // var isSignup = false;
-var [isSignup, changeForm] = useState(false);
+var [isSignup, formToggle] = useState(false);
 
 function App() {
   return (
